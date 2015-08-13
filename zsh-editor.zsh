@@ -335,8 +335,11 @@ for keymap in 'emacs' 'viins'; do
   fi
 
   # Display an indicator when completing.
-  bindkey -M "$keymap" "$key_info[Control]I" \
-    expand-or-complete-with-indicator
+  # Note: It's incompatible with `tarruda/zsh-autosuggestions`.
+  if zstyle -t ':editor' indicator; then
+    bindkey -M "$keymap" "$key_info[Control]I" \
+      expand-or-complete-with-indicator
+  fi
 
   # Insert 'sudo ' at the beginning of the line.
   bindkey -M "$keymap" "$key_info[Control]X$key_info[Control]S" prepend-sudo

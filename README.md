@@ -6,6 +6,20 @@ Customizable editor module for ZSH.
 
 The following options allow you to customize the editor module behaviour:
 
+* `indicator`:
+
+  * Description:
+
+    Show an indicator while completing.
+
+    _Note: If the indicator is enabled, then this plugin is incompatible with
+    [zsh-autosuggestions](https://github.com/tarruda/zsh-autosuggestions)._
+
+  * Usage:
+
+    * Enable: `zstyle ':editor' indicator 'yes'`
+    * Disable (default): `zstyle ':editor' indicator 'no'`
+
 * `export-key-info`:
 
   * Description:
