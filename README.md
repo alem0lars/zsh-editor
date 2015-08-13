@@ -6,7 +6,7 @@ Customizable editor module for ZSH.
 
 The following options allow you to customize the editor module behaviour.
 
-*Note: You should set these options **before** sourcing the module.*
+_Note: You should set these options **before** sourcing the module._
 
 * `export-key-info`:
 
