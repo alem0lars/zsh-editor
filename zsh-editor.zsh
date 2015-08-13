@@ -96,10 +96,6 @@ for key in "${(k)key_info[@]}"; do
   fi
 done
 
-if zstyle -t ':editor' export-key-info; then
-  export KEY_INFO=${key_info}
-fi
-
 # }}}
 
 # {{{ External editor.

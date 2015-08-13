@@ -20,18 +20,6 @@ The following options allow you to customize the editor module behaviour:
     * Enable: `zstyle ':editor' indicator 'yes'`
     * Disable (default): `zstyle ':editor' indicator 'no'`
 
-* `export-key-info`:
-
-  * Description:
-
-    Export an environment variable called `KEY_INFO` which contains *mnemonic*
-    key-info for some commonly used keys (like Control, etc..).
-
-  * Usage:
-
-    * Enable: `zstyle ':editor' export-key-info 'yes'`
-    * Disable (default): `zstyle ':editor' export-key-info 'no'`
-
 * `dot-expansion`:
 
   * Description:
