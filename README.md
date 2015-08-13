@@ -4,42 +4,44 @@ Customizable editor module for ZSH.
 
 ## Available options
 
-The following options allow you to customize the editor module behaviour.
-
-_Note: You should set these options **before** sourcing the module._
+The following options allow you to customize the editor module behaviour:
 
 * `export-key-info`:
 
-  Description:
+  * Description:
 
-  Export an environment variable called `KEY_INFO` which contains *mnemonic*
-  key-info for some commonly used keys (like Control, etc..).
+    Export an environment variable called `KEY_INFO` which contains *mnemonic*
+    key-info for some commonly used keys (like Control, etc..).
 
-  Usage:
+  * Usage:
 
-  * Enable: `zstyle ':editor' export-key-info 'yes'`
-  * Disable (default): `zstyle ':editor' export-key-info 'no'`
+    * Enable: `zstyle ':editor' export-key-info 'yes'`
+    * Disable (default): `zstyle ':editor' export-key-info 'no'`
 
 * `dot-expansion`:
 
-  Description:
+  * Description:
 
-  Automatically convert multiple dot sequences (e.g. `....` to `../..`).
+    Automatically convert multiple dot sequences (e.g. `....` to `../..`).
 
-  Usage:
+  * Usage:
 
-  * Enable: `zstyle ':editor' dot-expansion 'yes'`
-  * Disable (default): `zstyle ':editor' dot-expansion 'no'`
+    * Enable: `zstyle ':editor' dot-expansion 'yes'`
+    * Disable (default): `zstyle ':editor' dot-expansion 'no'`
 
 * `key-bindings`:
 
-  Description:
+  * Description:
 
-  Set keybindings to a particular flavour.
+    Set keybindings to a particular flavour.
 
-  Usage:
+  * Usage:
 
-  * Vim-style: `zstyle ':editor' key-bindings 'vi'`
-  * Emacs-style: `zstyle ':editor' key-bindings 'emacs'`
+    * Vim-style: `zstyle ':editor' key-bindings 'vi'`
+    * Emacs-style: `zstyle ':editor' key-bindings 'emacs'`
 
-- `:editor`
+_Note: You should set these options **before** sourcing the module._
+
+## License
+
+Licensed under `Apache License 2.0`. More details [here](./LICENSE).
