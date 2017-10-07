@@ -144,33 +144,23 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
-# Enables terminal application mode and updates editor information.
-function zle-line-init {
-  # The terminal must be in application mode when ZLE is active for
-  # `${terminfo}` values to be valid.
-  if (( $+terminfo[smkx] )); then
+# The terminal must be in application mode when ZLE is active for `${terminfo}`
+# values to be valid.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+  # Enables terminal application mode and updates editor information.
+  function zle-line-init() {
     # Enable terminal application mode.
     echoti smkx
-  fi
+  }
+  zle -N zle-line-init
 
-  # Update editor information.
-  zle editor-info
-}
-zle -N zle-line-init
-
-# Disables terminal application mode and updates editor information.
-function zle-line-finish {
-  # The terminal must be in application mode when ZLE is active for
-  # `${terminfo}` values to be valid.
-  if (( $+terminfo[rmkx] )); then
+  # Disables terminal application mode and updates editor information.
+  function zle-line-finish() {
     # Disable terminal application mode.
     echoti rmkx
-  fi
-
-  # Update editor information.
-  zle editor-info
-}
-zle -N zle-line-finish
+  }
+  zle -N zle-line-finish
+fi
 
 # Toggles emacs overwrite mode and updates editor information.
 function overwrite-mode {
@@ -231,6 +221,11 @@ function prepend-sudo {
 zle -N prepend-sudo
 
 # }}}
+
+# Ensure that the prompt is redrawn when the terminal size changes.
+TRAPWINCH() {
+  zle &&  zle -R
+}
 
 # {{{ Keybindings.
 
