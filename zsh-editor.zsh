@@ -359,7 +359,7 @@ if [[ "$key_bindings" == (emacs|) ]]; then
 elif [[ "$key_bindings" == vi ]]; then
   bindkey -v
 else
-  print "prezto: editor: invalid key bindings: $key_bindings" >&2
+  print "editor: invalid key bindings: $key_bindings" >&2
 fi
 
 # }}}
